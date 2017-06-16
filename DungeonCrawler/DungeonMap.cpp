@@ -214,12 +214,9 @@ const vector<Position> DungeonMap::getPathTo(const Position from, const Position
     Position pos(0, 0);
     for (pos; pos.height < m_maxHeight; pos.height++) {
         for (pos; pos.width < m_maxWidth; pos.width++) {
-            if (findTile(pos)->canBeEntered()) { //nur begehbare tiles
                 Q.insert(pos); //zeile 9
                 dist[pos] = numeric_limits<int>::max()-1; // zeile 6
                 prev[pos] = Position(-1, -1); //zeile 7
-
-            }
         }
         pos.width = 0;
     }
